@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDSM 随机惩罚游戏</title>
+    <link rel="stylesheet" href="{{ url_for('static', 
+filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>BDSM 随机惩罚游戏</h1>
+        <label for="level">选择惩罚等级：</label>
+        <select id="level">
+            <option value="轻度">轻度</option>
+            <option value="中度">中度</option>
+            <option value="重度">重度</option>
+        </select>
+        <br>
+        <button onclick="getPunishment()">获取随机惩罚</button>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
