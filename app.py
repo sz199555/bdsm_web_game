@@ -44,4 +44,6 @@ def get_punishment():
         return jsonify({"punishment": "请选择一个有效的惩罚等级。"})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+     port = int(os.environ.get("PORT", 10000))  # ✅ 读取 Render 提供的 PORT 变量
+    app.run(host="0.0.0.0", port=port)  # ✅ 让 Flask 监听所有 IP，使用指定端口
+    
