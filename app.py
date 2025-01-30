@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import random
+import os  # 导入 os 模块
 
 app = Flask(__name__)
 
@@ -44,6 +45,6 @@ def get_punishment():
         return jsonify({"punishment": "请选择一个有效的惩罚等级。"})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # 通过环境变量获取端口，默认10000
-    app.run(host="0.0.0.0", port=port)  # 设置为可以被所有外部请求访问
+    port = int(os.environ.get("PORT", 10000))  # 获取PORT环境变量，默认使用10000
+    app.run(host="0.0.0.0", port=port)  # 使用适合 Render 的 host 和 port
     
